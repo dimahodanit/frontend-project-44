@@ -9,7 +9,7 @@ const getNumbers = () => {
 }
 
 // правильный ответ
-const rightAnswer = (numbersPair) => {
+const getRightAnswer = (numbersPair) => {
   const numbers = numbersPair.split(' ')
   let firstNumber = Number(numbers[0])
   let secondNumber = Number(numbers[1])
@@ -21,4 +21,4 @@ const rightAnswer = (numbersPair) => {
   }
   return String(firstNumber) // преобразуем в строку, чтобы затем сравнить со строковым ответом игрока
 }
-export default () => app(gameDescription, getNumbers, rightAnswer)
+export default () => app(gameDescription, getNumbers, getRightAnswer)

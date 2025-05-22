@@ -13,7 +13,7 @@ const calcTask = () => {
 }
 
 // правильный ответ
-const rightAnswer = (hiddenNumber) => {
+const getRightAnswer = (hiddenNumber) => {
   const firstOperand = Number(hiddenNumber[0])
   const lastOperand = Number(hiddenNumber[hiddenNumber.length - 1])
   const operatorIndex = Math.floor((hiddenNumber.length - 1) / 2)
@@ -37,4 +37,4 @@ const rightAnswer = (hiddenNumber) => {
   return String(result)
 }
 
-export default () => app(gameDescription, calcTask, rightAnswer)
+export default () => app(gameDescription, calcTask, getRightAnswer)

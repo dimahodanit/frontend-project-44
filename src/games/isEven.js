@@ -10,8 +10,8 @@ const getRandomNumber = () => {
 }
 
 // правильный ответ
-const rightAnswer = (hiddenNumber) => {
+const getRightAnswer = (hiddenNumber) => {
   return hiddenNumber % 2 === 0 ? 'yes' : 'no'
 }
 
-export default () => app(gameDescription, getRandomNumber, rightAnswer)
+export default () => app(gameDescription, getRandomNumber, getRightAnswer)
