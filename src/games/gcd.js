@@ -21,7 +21,4 @@ const rightAnswer = (numbersPair) => {
   }
   return String(firstNumber) // преобразуем в строку, чтобы затем сравнить со строковым ответом игрока
 }
-
-rightAnswer(getNumbers())
-
 export default () => app(gameDescription, getNumbers, rightAnswer)
