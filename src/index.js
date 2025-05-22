@@ -24,7 +24,6 @@ const app = function (gameDescription, gameRules, rightAnswer) {
           hiddenNumber,
         )}". Let's try again, ${name}!`,
       )
-      roundCount = 0
       break
     }
 
