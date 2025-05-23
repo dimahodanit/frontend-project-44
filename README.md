@@ -21,3 +21,7 @@ Brain-calc: calculate and write the result of a random mathematical expression
 ## Brain-gcd:
 
 [![asciicast](https://asciinema.org/a/Iff1wnlrium8tMfuj4wxsd8QD.svg)](https://asciinema.org/a/Iff1wnlrium8tMfuj4wxsd8QD)
+
+## Brain-progression
+
+[![asciicast](https://asciinema.org/a/cyOeM51aG5ydwQfbJFk2YaLGA.svg)](https://asciinema.org/a/cyOeM51aG5ydwQfbJFk2YaLGA)
