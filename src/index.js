@@ -9,19 +9,19 @@ const app = function (gameDescription, gameRules, rightAnswer) {
 
   // Цикл
   for (let roundCount = 0; roundCount < 3;) {
-    const hiddenNumber = gameRules()
-    console.log(`Question: ${hiddenNumber}`)
+    const hiddenNumbers = gameRules()
+    console.log(`Question: ${hiddenNumbers}`)
     const playerAnswer = readlineSync.question('Your answer: ').toLowerCase()
 
     // Проверка ответа игрока
-    if (playerAnswer === rightAnswer(hiddenNumber)) {
+    if (playerAnswer === rightAnswer(hiddenNumbers)) {
       console.log('Correct!')
       roundCount += 1
     }
     else {
       console.log(
         `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer(
-          hiddenNumber,
+          hiddenNumbers,
         )}". Let's try again, ${name}!`,
       )
       break
