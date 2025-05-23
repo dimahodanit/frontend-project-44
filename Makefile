@@ -16,5 +16,12 @@ brain-even: #запуск приложения brain-even
 
 brain-calc: #запуск приложения brain-calc
 	node bin/brain-calc.js 
+
+brain-gcd: #запуск приложения brain-gcd
+	node bin/brain-gcd.js 
+
+brain-progression: #запуск приложения brain-calc
+	node bin/brain-progression.js 
+
 lint-fix:  #исправление ошибок линтера
 	npx eslint --fix .  
