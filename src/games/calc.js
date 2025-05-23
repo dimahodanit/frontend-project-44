@@ -4,7 +4,7 @@ import app from '../index.js'
 const gameDescription = 'What is the result of the expression?'
 
 // механика игры
-const calcTask = () => {
+const getMathTask = () => {
   const operatorsArray = ['*', '+', '-']
   const randomOperator = Math.floor(Math.random() * operatorsArray.length)
   return `${Math.floor(Math.random() * 10)} ${
@@ -37,4 +37,4 @@ const getRightAnswer = (hiddenNumber) => {
   return String(result)
 }
 
-export default () => app(gameDescription, calcTask, getRightAnswer)
+export default () => app(gameDescription, getMathTask, getRightAnswer)
