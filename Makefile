@@ -8,20 +8,26 @@ brain-games: #запуск приложения brain-games
 publish:  #отладка публикации в npm репозиторий, пакет не будет опубликован, но мы увидим что он будет в себя включать
 	npm publish --dry-run
 
-lint: 
-	npx eslint . #запуск линтера
-
-brain-even: #запуск приложения brain-even
-	node bin/brain-even.js 
-
-brain-calc: #запуск приложения brain-calc
-	node bin/brain-calc.js 
-
-brain-gcd: #запуск приложения brain-gcd
-	node bin/brain-gcd.js 
-
-brain-progression: #запуск приложения brain-calc
-	node bin/brain-progression.js 
+lint:  #запуск линтера
+	npx eslint . 
 
 lint-fix:  #исправление ошибок линтера
 	npx eslint --fix .  
+
+brain-even: #запуск игры brain-even
+	node bin/brain-even.js 
+
+brain-calc: #запуск игры brain-calc
+	node bin/brain-calc.js 
+
+brain-gcd: #запуск игры brain-gcd
+	node bin/brain-gcd.js 
+
+brain-progression: #запуск игры brain-progression
+	node bin/brain-progression.js 
+
+brain-prime: #запуск игры brain-prime
+	node bin/brain-prime.js
+
+
+
