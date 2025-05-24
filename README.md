@@ -25,3 +25,7 @@ Brain-calc: calculate and write the result of a random mathematical expression
 ## Brain-progression
 
 [![asciicast](https://asciinema.org/a/cyOeM51aG5ydwQfbJFk2YaLGA.svg)](https://asciinema.org/a/cyOeM51aG5ydwQfbJFk2YaLGA)
+
+## Brain-prime
+
+[![asciicast](https://asciinema.org/a/Z4LqsYBLBT9a4NyB10GbONxgY.svg)](https://asciinema.org/a/Z4LqsYBLBT9a4NyB10GbONxgY)
