@@ -1,4 +1,5 @@
 import app from '../index.js'
+import getRandomNumber from '../helpers.js'
 
 // описание игры
 const gameDescription = 'What is the result of the expression?'
@@ -6,10 +7,10 @@ const gameDescription = 'What is the result of the expression?'
 // механика игры
 const getMathTask = () => {
   const operatorsArray = ['*', '+', '-']
-  const randomOperator = Math.floor(Math.random() * operatorsArray.length)
-  return `${Math.floor(Math.random() * 10)} ${
+  const randomOperator = getRandomNumber(operatorsArray.length)
+  return `${getRandomNumber()} ${
     operatorsArray[randomOperator]
-  } ${Math.floor(Math.random() * 10)}`
+  } ${getRandomNumber()}`
 }
 
 // правильный ответ
@@ -19,22 +20,16 @@ const getRightAnswer = (hiddenNumber) => {
   const operatorIndex = Math.floor((hiddenNumber.length - 1) / 2)
   const operator = hiddenNumber[operatorIndex]
 
-  let result
   switch (operator) {
     case '+':
-      result = firstOperand + lastOperand
-      break
+      return String(firstOperand + lastOperand)
     case '-':
-      result = firstOperand - lastOperand
-      break
+      return String(firstOperand - lastOperand)
     case '*':
-      result = firstOperand * lastOperand
-      break
+      return String(firstOperand * lastOperand)
     case '/':
-      result = firstOperand / lastOperand
-      break
+      return String(firstOperand / lastOperand)
   }
-  return String(result)
 }
 
 export default () => app(gameDescription, getMathTask, getRightAnswer)
