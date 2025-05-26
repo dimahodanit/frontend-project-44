@@ -26,11 +26,8 @@ const app = function (gameDescription, gameRules, rightAnswer) {
       )
       break
     }
-
     // Победа игрока
-    if (roundCount === 3) {
-      console.log(`Congratulations, ${name}!`)
-    }
+    console.log(`Congratulations, ${name}!`)
   }
 }
 
