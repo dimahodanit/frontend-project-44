@@ -20,8 +20,7 @@ const getProgressionNumbers = () => {
   }
   // добавляем в массив пропущенное число
   const missNumber = '..'
-  progression['numbers'][getRandomNumber(progression['length'])]
-    = missNumber
+  progression['numbers'][getRandomNumber(progression['length'])] = missNumber
   return progression['numbers'].join(' ')
 }
 
@@ -29,24 +28,23 @@ const getProgressionNumbers = () => {
 const getRightAnswer = (progressionNumbers) => {
   const numbersArray = progressionNumbers.split(' ')
 
-  const startIndex = 0
-  const endIndex = numbersArray.length - 1
+  const startIndex = numbersArray[0] === '..' ? 1 : 0
+  const endIndex
+    = numbersArray[numbersArray.length - 1] === '..'
+      ? numbersArray.length - 2
+      : numbersArray.length - 1
   const missNumberIndex = numbersArray.indexOf('..')
-  let step = Number(numbersArray[2]) - Number(numbersArray[1])
+  const step
+    = (Number(numbersArray[endIndex]) - Number(numbersArray[startIndex]))
+      / (endIndex - startIndex)
   let rightAnswer
-
-  switch (missNumberIndex) {
-    case startIndex:
-      rightAnswer = Number(numbersArray[1]) - step
-      break
-    case endIndex:
-      rightAnswer = Number(numbersArray[endIndex - 1]) + step
-      break
-    default:
-      step
-        = (Number(numbersArray[endIndex]) - Number(numbersArray[startIndex]))
-          / (endIndex - startIndex)
-      rightAnswer = Number(numbersArray[missNumberIndex - 1]) + step
+  if (startIndex === 1) {
+    // Если первый элемент пропущен, то вычисляем его
+    rightAnswer = Number(numbersArray[startIndex]) - step
+  }
+  else {
+    // если пропущен любой другой элемент
+    rightAnswer = Number(numbersArray[startIndex]) + missNumberIndex * step
   }
 
   return String(rightAnswer)
