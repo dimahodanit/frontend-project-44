@@ -1,12 +1,14 @@
 import app from '../index.js'
+import getRandomNumber from '../helpers.js'
+
 
 // описание игры
 const gameDescription
   = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 // механика игры
-const getRandomNumber = () => {
-  return Math.floor(Math.random() * 100)
+const getNumber = () => {
+  return getRandomNumber(100)
 }
 
 // правильный ответ
@@ -27,4 +29,4 @@ const isPrime = (hiddenNumber) => {
   return rightAnswer
 }
 
-export default () => app(gameDescription, getRandomNumber, isPrime)
+export default () => app(gameDescription, getNumber, isPrime)
