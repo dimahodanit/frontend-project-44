@@ -1,11 +1,12 @@
 import app from '../index.js'
+import getRandomNumber from '../helpers.js'
 
 // описание игры
 const gameDescription = 'Find the greatest common divisor of given numbers.'
 
 // механика игры
 const getNumbers = () => {
-  return `${Math.floor(Math.random() * 100)} ${Math.floor(Math.random() * 100)}`
+  return `${getRandomNumber(100)} ${getRandomNumber(100)}`
 }
 
 // правильный ответ
