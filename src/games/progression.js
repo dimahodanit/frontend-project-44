@@ -1,4 +1,5 @@
 import app from '../index.js'
+import getRandomNumber from '../helpers.js'
 
 // описание игры
 const gameDescription = 'What number is missing in the progression?'
@@ -6,9 +7,9 @@ const gameDescription = 'What number is missing in the progression?'
 // механика игры
 const getProgressionNumbers = () => {
   const progression = {
-    length: Math.floor(Math.random() * (10 - 5 + 1) + 5), // длинна прогрессии случайно число от 5 до 10 включительно
-    step: Math.floor(Math.random() * 5 + 1), // шаг прогрессии случайное число от 1 до 5 включительно.
-    start: Math.floor(Math.random() * 10), // число с которого начинается прогрессия
+    length: getRandomNumber(10 - 5 + 1) + 5, // длинна прогрессии случайноe число от 5 до 10 включительно
+    step: getRandomNumber(5) + 1, // шаг прогрессии случайное число от 1 до 5 включительно.
+    start: getRandomNumber(), // число с которого начинается прогрессия
     numbers: [],
   }
 
@@ -19,7 +20,7 @@ const getProgressionNumbers = () => {
   }
   // добавляем в массив пропущенное число
   const missNumber = '..'
-  progression['numbers'][Math.floor(Math.random() * progression['length'])]
+  progression['numbers'][getRandomNumber(progression['length'])]
     = missNumber
   return progression['numbers'].join(' ')
 }
