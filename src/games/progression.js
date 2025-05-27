@@ -1,10 +1,14 @@
 import app from '../index.js'
-import getRandomNumber from '../helpers.js'
+import { getGameRules, getRandomNumber } from '../helpers.js'
 
 // описание игры
 const gameDescription = 'What number is missing in the progression?'
 
 // механика игры
+// const progressionLength = getRandomNumber(10 - 5 + 1) + 5 // длинна прогрессии случайноe число от 5 до 10 включительно
+// const step = getRandomNumber(5) + 1 // шаг прогрессии случайное число от 1 до 5 включительно.
+// const progressionStart = getRandomNumber() // число с которого начинается прогрессия
+
 const getProgressionNumbers = () => {
   const progression = {
     length: getRandomNumber(10 - 5 + 1) + 5, // длинна прогрессии случайноe число от 5 до 10 включительно
@@ -23,7 +27,6 @@ const getProgressionNumbers = () => {
   progression['numbers'][getRandomNumber(progression['length'])] = missNumber
   return progression['numbers'].join(' ')
 }
-
 // правильный ответ
 const getRightAnswer = (progressionNumbers) => {
   const numbersArray = progressionNumbers.split(' ')
@@ -50,4 +53,5 @@ const getRightAnswer = (progressionNumbers) => {
   return String(rightAnswer)
 }
 
-export default () => app(gameDescription, getProgressionNumbers, getRightAnswer)
+const gameRules = getGameRules(getProgressionNumbers, getRightAnswer)
+export default () => app(gameDescription, gameRules)
