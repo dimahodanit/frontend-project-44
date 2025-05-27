@@ -13,12 +13,11 @@ const app = function (gameDescription, gameRules) {
       console.log('Correct!')
       return true
     }
-    else {
-      console.log(
-        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`,
-      )
-      return false
-    }
+
+    console.log(
+      `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`,
+    )
+    return false
   }
   let isCorrect = true
   // Цикл игры
