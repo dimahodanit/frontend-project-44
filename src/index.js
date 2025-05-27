@@ -8,15 +8,11 @@ const app = function (gameDescription, gameRules) {
   console.log(gameDescription)
 
   // функция проверки правильности ответа
-  function checkAnswer(playerAnswer, rightAnswer, name) {
+  function checkAnswer(playerAnswer, rightAnswer) {
     if (playerAnswer === rightAnswer) {
-      console.log('Correct!')
       return true
     }
 
-    console.log(
-      `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`,
-    )
     return false
   }
 
@@ -28,9 +24,13 @@ const app = function (gameDescription, gameRules) {
     const playerAnswer = readlineSync.question('Your answer: ').toLowerCase()
 
     // Вызов функции проверки ответа
-    if (!checkAnswer(playerAnswer, gameRules.rightAnswer(numbers), name)) {
-      break
+    if (!checkAnswer(playerAnswer, gameRules.rightAnswer(numbers))) {
+      console.log(
+        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${gameRules.rightAnswer(numbers)}". Let's try again, ${name}!`,
+      )
+      return
     }
+    console.log('Correct!')
     roundCount += 1
   }
   // Победа игрока
