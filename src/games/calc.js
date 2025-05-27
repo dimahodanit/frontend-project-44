@@ -32,4 +32,6 @@ const getRightAnswer = (hiddenNumber) => {
   }
 }
 
-export default () => app(gameDescription, getMathTask, getRightAnswer)
+const gameRules = getGameRules(getMathTask, getRightAnswer)
+
+export default () => app(gameDescription, gameRules)
