@@ -1,6 +1,5 @@
 import app from '../index.js'
-import getRandomNumber from '../helpers.js'
-
+import { getGameRules, getRandomNumber } from '../helpers.js'
 
 // описание игры
 const gameDescription
@@ -12,8 +11,8 @@ const getNumber = () => {
 }
 
 // правильный ответ
-const isPrime = (hiddenNumber) => {
-  const n = hiddenNumber
+const isPrime = (number) => {
+  const n = number
   let result = true
   if (n < 2 || (n > 2 && n % 2 === 0)) {
     result = false
@@ -28,5 +27,5 @@ const isPrime = (hiddenNumber) => {
   const rightAnswer = result ? 'yes' : 'no'
   return rightAnswer
 }
-
-export default () => app(gameDescription, getNumber, isPrime)
+const gameRules = getGameRules(getNumber, isPrime)
+export default () => app(gameDescription, gameRules)
