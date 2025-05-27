@@ -19,21 +19,22 @@ const app = function (gameDescription, gameRules) {
     )
     return false
   }
-  let isCorrect = true
+
   // Цикл игры
-  for (let roundCount = 0; roundCount < 3; roundCount++) {
+  let roundCount = 0
+  while (roundCount < 3) {
     const numbers = gameRules.numbers()
     console.log(`Question: ${numbers}`)
     const playerAnswer = readlineSync.question('Your answer: ').toLowerCase()
 
     // Вызов функции проверки ответа
     if (!checkAnswer(playerAnswer, gameRules.rightAnswer(numbers), name)) {
-      isCorrect = false
       break
     }
+    roundCount += 1
   }
   // Победа игрока
-  if (isCorrect) {
+  if (roundCount === 3) {
     console.log(`Congratulations, ${name}!`)
   }
 }
