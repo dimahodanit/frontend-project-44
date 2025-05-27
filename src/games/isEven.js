@@ -1,5 +1,5 @@
 import app from '../index.js'
-import getRandomNumber from '../helpers.js'
+import { getGameRules, getRandomNumber } from '../helpers.js'
 
 // описание игры
 const gameDescription
@@ -11,8 +11,10 @@ const getNumber = () => {
 }
 
 // правильный ответ
-const getRightAnswer = (hiddenNumber) => {
-  return hiddenNumber % 2 === 0 ? 'yes' : 'no'
+const getRightAnswer = (number) => {
+  return number % 2 === 0 ? 'yes' : 'no'
 }
 
-export default () => app(gameDescription, getNumber, getRightAnswer)
+const gameRules = getGameRules(getNumber, getRightAnswer)
+
+export default () => app(gameDescription, gameRules)
