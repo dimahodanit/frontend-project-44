@@ -12,9 +12,10 @@ const app = function (gameDescription, gameRules) {
     if (playerAnswer === rightAnswer) {
       console.log('Correct!')
       return true
-    } else {
+    }
+    else {
       console.log(
-        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`
+        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`,
       )
       return false
     }
