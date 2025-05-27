@@ -7,23 +7,33 @@ const app = function (gameDescription, gameRules) {
   console.log(`Hello, ${name}!`)
   console.log(gameDescription)
 
-  // Цикл
-  for (let roundCount = 0; roundCount < 3;) {
+  // функция проверки правильности ответа
+  function checkAnswer(playerAnswer, rightAnswer, name) {
+    if (playerAnswer === rightAnswer) {
+      console.log('Correct!')
+      return true
+    } else {
+      console.log(
+        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`
+      )
+      return false
+    }
+  }
+  let isCorrect = true
+  // Цикл игры
+  for (let roundCount = 0; roundCount < 3; roundCount++) {
     const numbers = gameRules.numbers()
     console.log(`Question: ${numbers}`)
     const playerAnswer = readlineSync.question('Your answer: ').toLowerCase()
 
-    // Проверка ответа игрока
-    if (playerAnswer === gameRules.rightAnswer(numbers)) {
-      console.log('Correct!')
-      roundCount += 1
-    }
-    else {
-      console.log(
-        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${gameRules.rightAnswer(numbers)}". Let's try again, ${name}!`)
+    // Вызов функции проверки ответа
+    if (!checkAnswer(playerAnswer, gameRules.rightAnswer(numbers), name)) {
+      isCorrect = false
       break
     }
-    // Победа игрока
+  }
+  // Победа игрока
+  if (isCorrect) {
     console.log(`Congratulations, ${name}!`)
   }
 }
