@@ -1,5 +1,5 @@
 import app from '../index.js'
-import getRandomNumber from '../helpers.js'
+import { getGameRules, getRandomNumber } from '../helpers.js'
 
 // описание игры
 const gameDescription = 'Find the greatest common divisor of given numbers.'
@@ -22,4 +22,7 @@ const getRightAnswer = (numbersPair) => {
   }
   return String(firstNumber) // преобразуем в строку, чтобы затем сравнить со строковым ответом игрока
 }
-export default () => app(gameDescription, getNumbers, getRightAnswer)
+
+const gameRules = getGameRules(getNumbers, getRightAnswer)
+
+export default () => app(gameDescription, gameRules)
