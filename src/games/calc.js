@@ -1,5 +1,5 @@
 import app from '../index.js'
-import getRandomNumber from '../helpers.js'
+import { getGameRules, getRandomNumber } from '../helpers.js'
 
 // описание игры
 const gameDescription = 'What is the result of the expression?'
