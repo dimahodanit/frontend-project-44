@@ -28,7 +28,6 @@ Brain-progression: вычислите недостающее число в чи�
 Чтобы запустить игру, вы можете использовать команду в терминале "make <game_name>" в директории проекта
 Например: make brain-cacl
 
-Демонстрация игр.
 ## Brain-even:
 
 [![asciicast](https://asciinema.org/a/TeDaFKi929vG0Qx9dRSjSEHMP.svg)](https://asciinema.org/a/TeDaFKi929vG0Qx9dRSjSEHMP)
