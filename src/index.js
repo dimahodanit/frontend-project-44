@@ -17,8 +17,7 @@ const app = function (gameDescription, gameRules) {
   }
 
   // Цикл игры
-  let roundCount = 0
-  while (roundCount < 3) {
+  for (let roundCount = 0; roundCount < 3; roundCount++) {
     const numbers = gameRules.numbers()
     console.log(`Question: ${numbers}`)
     const playerAnswer = readlineSync.question('Your answer: ').toLowerCase()
@@ -26,17 +25,16 @@ const app = function (gameDescription, gameRules) {
     // Вызов функции проверки ответа
     if (!checkAnswer(playerAnswer, gameRules.rightAnswer(numbers))) {
       console.log(
-        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${gameRules.rightAnswer(numbers)}". Let's try again, ${name}!`,
+        `"${playerAnswer}" is wrong answer ;(. Correct answer was "${gameRules.rightAnswer(
+          numbers,
+        )}". Let's try again, ${name}!`,
       )
       return
     }
     console.log('Correct!')
-    roundCount += 1
   }
   // Победа игрока
-  if (roundCount === 3) {
-    console.log(`Congratulations, ${name}!`)
-  }
+  console.log(`Congratulations, ${name}!`)
 }
 
 export default app
