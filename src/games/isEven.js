@@ -11,8 +11,9 @@ const getNumber = () => {
 }
 
 // правильный ответ
+const isEven = number => (number % 2 === 0)
 const getRightAnswer = (number) => {
-  return number % 2 === 0 ? 'yes' : 'no'
+  return isEven(number) ? 'yes' : 'no'
 }
 
 const gameRules = getGameRules(getNumber, getRightAnswer)
